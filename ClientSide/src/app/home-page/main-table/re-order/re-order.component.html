@@ -1,0 +1,17 @@
+<p-dialog header="ReOrder a product" [(visible)]="display" [style]="{width: '80vw'}">
+    <div class="grid p-fluid" style="margin-bottom: '100px'">
+        <div *ngIf="selectedReOrderProduct != null">
+            <p>ProductId: {{selectedReOrderProduct.ProductId}}</p>
+            <p>Product Description: {{selectedReOrderProduct.Description}}</p>
+        </div>
+        <div class="field col-12 md:col-3">
+            <label for="minmax">Number to ReOrder</label>
+            <p-inputNumber [(ngModel)]="reOrderNumber" inputId="integeronly">
+            </p-inputNumber>
+        </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="reOrderProduct()" label="Submit" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>

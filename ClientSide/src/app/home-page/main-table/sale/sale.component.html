@@ -1,0 +1,22 @@
+<p-dialog header="Make a Sale" [(visible)]="display" [style]="{width: '80vw'}">
+    <div class="grid p-fluid" style="margin-bottom: '100px'">
+        <div *ngIf="selectedSaleProduct != null">
+            <p>ProductId: {{selectedSaleProduct.ProductId}}</p>
+            <p>Product Description: {{selectedSaleProduct.Description}}</p>
+        </div>
+        <div class="field col-12 md:col-3">
+            <label for="minmax">Number to sell</label>
+            <p-inputNumber [(ngModel)]="soldNumber" inputId="integeronly">
+            </p-inputNumber>
+        </div>
+
+        <div class="field col-12 md:col-3">
+            <label for="minmax">Discount</label>
+            <p-dropdown [options]="discounts" [(ngModel)]="selectedDiscount" placeholder="Select a Discount" optionLabel="discount" [showClear]="true"></p-dropdown>
+        </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="sellProduct()" label="Submit" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
