@@ -1,0 +1,8 @@
+--create table Stocks (
+--	ProductId INT PRIMARY KEY NOT NULL IDENTITY,
+--	Description VARCHAR(50) NOT NULL,
+--	CurrentStock INT NOT NULL,
+--	SafeStock INT NOT NULL,
+--	SoldStockTotal DECIMAL(6,3) NOT NULL,
+--	Price DECIMAL NOT NULL
+--);
